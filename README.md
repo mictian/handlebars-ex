@@ -17,6 +17,37 @@ var ast = handlebarsX.parse('<div>{{#if cond}}<hr/> {{/if}}</div>');
 
 ```
 
+## Limitation
+It is important to notice that NOT ALL handlebars templates are valid handlebars-ex templates.
+
+The grammar used here is not the same used by Handlebars. With Handlebars you are able to generate ANY template; C#, JavaScript, HTML or simple Plain Text.
+This is not the case of handlebars-ex. Here we only accept/recognize a subset of HTML-Handlebars templates.
+
+This means based on the current grammar, there are templates that WONT be recognized.
+Grammar limitations:
+
+  - Variable tag name are not supported. Sample:
+
+```HTML
+<{{tagName}}> some content here </{{tagName}}>
+```
+
+  - XML Structure is mandatory for non void tags. This means that you CANNOT conditionally (inside a IF condition) close a tag. Besides, as a consequence of the previous all open tag must have a closing tag. None child tag is allowed to close or add context outside the closing parent tag. Samples:
+
+```HTML
+<!-- Invalid Tags structure -->
+<div> {{#if condition}}   </div> {{else}} <p>...</p> </div> {{/if}}
+<!-- Here the IF has an invalid child a closing div that does not open inside the IF body. The first div never close -->
+
+<!-- Invalid Tags structure -->
+<a href="{{#if condition}}" {{else}} extra-values" {{/if}} />
+
+<!-- Valid Tags structure -->
+<input type="text" />
+<input type="..." ></input>
+```
+
+
 ## License
 The MIT License (MIT)
 
