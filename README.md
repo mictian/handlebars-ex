@@ -9,12 +9,25 @@ This project born as a necessity of the project [blueHTML](https://github.com/Mi
 
 ## API & Example
 
+### Installation
+```javascript
+npm install handlebars-ex
+```
+
+### Example
+
 ```javascript
 
 var handlebarsX = require('handlebars-ex');
 
 var ast = handlebarsX.parse('<div>{{#if cond}}<hr/> {{/if}}</div>');
 
+```
+
+## Tests
+All test are written in Jasmine. To run them:
+```javascript
+npm test
 ```
 
 ## Limitation
