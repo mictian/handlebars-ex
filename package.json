@@ -1,0 +1,30 @@
+{
+	"name": "handlebars-ex",
+	"version": "0.0.1",
+	"description": "Simple Handlebars PEGjs Grammar",
+	"main": "index.js",
+	"scripts": {
+		"test": "jasmine"
+	},
+	"repository": {
+		"type": "git",
+		"url": "github.com/mictian/handlebars-ex"
+	},
+	"keywords": [
+		"pegjs",
+		"handlebars",
+		"parse",
+		"parsing",
+		"template"
+	],
+	"author": "Mictian",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mictian/handlebars-ex/issues"
+	},
+	"homepage": "https://github.com/mictian/handlebars-ex",
+	"devDependencies": {
+		"jasmine": "^2.3.2",
+		"pegjs": "~0.7.0"
+	}
+}
