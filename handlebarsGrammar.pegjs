@@ -288,7 +288,7 @@ textNode
 		}
 
 wordWithSlash
-	= /*!ignorable*/ w:[^>}{<'"\n\t]
+	= w:[^>}{<\n\t]
 		{
 			return w;
 		}
