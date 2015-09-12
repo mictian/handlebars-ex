@@ -1314,13 +1314,13 @@ module.exports = (function(){
         var pos0;
         
         pos0 = pos;
-        if (/^[^>}{<'"\n\t]/.test(input.charAt(pos))) {
+        if (/^[^>}{<\n\t]/.test(input.charAt(pos))) {
           result0 = input.charAt(pos);
           pos++;
         } else {
           result0 = null;
           if (reportFailures === 0) {
-            matchFailed("[^>}{<'\"\\n\\t]");
+            matchFailed("[^>}{<\\n\\t]");
           }
         }
         if (result0 !== null) {

@@ -131,6 +131,22 @@ describe('Simple HTLM', function ()
 			expect(result).toEqual(expeted);
 		});
 
+		it('Should recognize simple text with single quotes', function ()
+		{
+			var result = parser.parse('\'This is a text node\'')
+			,	expeted = [{"type":"text","value":"'This is a text node'"}];
+
+			expect(result).toEqual(expeted);
+		});
+
+		it('Should recognize simple text with double quotes', function ()
+		{
+			var result = parser.parse('"This is a text node"')
+			,	expeted = [{"type":"text","value":"\"This is a text node\""}];
+
+			expect(result).toEqual(expeted);
+		});
+
 		it('Should recognize simple text nested in block nodes', function ()
 		{
 			var result = parser.parse('<div>This is a text node</div>')

@@ -60,6 +60,8 @@ Grammar limitations:
 <input type="..." ></input>
 ```
 
+## Motivation
+I needed to convert from handlebars to a bunch of other DOM abstractions, like Virtual-DOM or React. And as I have a lot of handlebars templates already I prefer convert them rather than do them again from scratch.
 
 ## License
 The MIT License (MIT)
